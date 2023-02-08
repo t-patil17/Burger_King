@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="shortcut icon" type="x-con" href="assests/images.png">
+  <title>Burger</title>
+</head>
+<style>
+  body {
+    overflow-x: hidden;
+    background-color: #f8f6f3;
+  }
+
+  .nav-item {
+    margin-top: 20px;
+  }
+
+  .rounded-circle {
+    display: block;
+    position: relative;
+    z-index: -2;
+    background: #fff;
+    border-radius: 50%;
+    bottom: -11px;
+  }
+
+  h6 {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  .cell-image,
+  img {
+    background-color: #fff;
+    border: solid white 5px;
+  }
+
+
+  h2 {
+    color: #000;
+    font-family: "Flame-Regular";
+  }
+
+  .same {
+    width: 100%;
+    height: 10px;
+    margin-right: 10px;
+
+    border-radius: 5px;
+    counter-increment: carousel-cell;
+  }
+
+  /* cell number */
+  .same:before {
+    display: block;
+    text-align: center;
+    content: counter(carousel-cell);
+    line-height: 30px;
+    font-size: 40px;
+    color: white;
+  }
+
+  .abc {
+    background-image: url(assests/download04.png);
+  }
+  .card {
+    height: 200px;
+    width: 400px;
+
+  }
+  .carousel-cell-image{
+    padding: 10px;
+  }
+
+
+  .footer {
+    background-color: #323231;
+    height: 400px;
+  }
+  
+  .footer a  {
+    text-decoration: none;
+  }
+
+  .footer h6{
+    color: #f8f6f3;
+    margin-top: 50px;
+  }
+  pre{
+    color: #f8f6f3;
+  }
+  .footer i{
+        color: #ffffff;
+        font-size: 30px;
+       padding: 10px;
+       float: right;
+  }
+  
+</style>
+
+<body>
+  <div class="container mt-3">
+    <ul class="nav fixed-top" style="justify-content:space-around; background-color: #fff;">
+      <li>
+        <!-- <h1><img src="assects/logo.d0829240.png" alt="" width="120px" height="110px" style="border-radius: 60px; "></h1> -->
+        <img src="assests/logo.d burger.png" class="rounded-circle" alt="Cinque Terre" width="104" height="80">
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: gray;"><b>DINE-IN/TAKEAWAY</b></a>
+      </li>
+      <li class="nav-item">
+        <i class="fa-solid fa-toggle-on" style="font-size: 40px; color: #e70;"></i>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style=" border-right: 2px solid gray; color: #e70; "><b>DELIVERY</b></a>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-light"
+          style="border-radius: 35px;margin-left: 10px; background-color: #fbfaf8;"><i
+            class="fa-sharp fa-solid fa-location-dot" style="color: #e70; "></i> 143,pardi Rode
+          Nagpur.....</button>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: gray; font-weight: bold;"><i class="fa-solid fa-store"></i>
+          NEARBY STORES</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: gray; font-weight: bold;"><b><i
+              class="fa-duotone fa-percent"></i></b> KING DEALS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: gray; font-weight: bold;"><i class="fa-sharp fa-solid fa-user"></i>
+          LOGIN</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: gray; font-weight: bold;"> <i
+            class="fa-sharp fa-solid fa-bag-shopping"></i> CART</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa-sharp fa-solid fa-magnifying-glass"
+            style="color: #e70; font-size: 18px;"></i></a>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+  <div class="row">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="z-index: -3;margin-top: 50px;">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="assests/1x_web_x300jpg-22222.jfif" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assests/1x_web_300jpg-2-2-2-2.jfif" class="d-block w-100" alt="...">
+        </div>
+
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- row-2 multiple images of burger  -->
+  <h2 style="margin-top: 40px;margin-left: 90px;"> <b>OUR MENU </b></h2>
+
+  <button style="color: #e70; border: none;   font-weight: bold; margin-left: 80em; background-color: none;">See All > </button>
+
+  <div class="container-fluid abc" style="margin-top: 50px;">
+    <div class="row">
+
+      <div class="carousel" data-flickity='{ "groupCells": true }'>
+        <div class="carousel-cell-image"><img src="assests/row-1 --1.jfif" alt=""
+            style="height: 100px; width: 200; padding-right: 20px;">
+          <h6>Best of <br> Combos( <br> upto 20% <br> OFF)</h6>
+        </div>
+        <div class="carousel-cell-image"><img src="assests/row -1 -2.jfif" alt=""
+            style="height: 100px; width: 200; padding-right: 20px;">
+          <h6>Freind & <br> Family <br> Combo </h6>
+        </div>
+        <div class="carousel-cell-image"><img src="assests/row-1--3.jfif" alt=""
+            style="height: 100px; width: 200; padding-right: 20px;">
+          <h6>Whopper</h6>
+        </div>
+        <div class="carousel-cell-image"><img src="assests/row -1-4.jfif" alt=""
+            style="height: 100px; width: 200; padding-right: 20px;">
+          <h6>Top Picks </h6>
+        </div>
+        <div class="carousel-cell-image"><img src="assests/row-1-5-.jfif" alt=""
+            style="height: 100px; width: 200; padding-right: 20px;">
+          <h6>Stunner <br> Menu </h6>
+        </div>
+        <div class="carousel-cell-image"><img src="assests/row-1-6.jfif" alt=""
+            style="height: 100px; width: 200; padding-right: 20px;">
+          <h6>Burgers</h6>
+        </div>
+        <div class="carousel-cell-image"><img src="assests/row-1-7.jfif" alt=""
+            style="height: 100px; width: 200; padding-right: 20px;">
+          <h6>New Kings <br> Collections</h6>
+        </div>
+        <div class="carousel-cell-image"><img src="assests/row-1-8-sides.jfif" alt=""
+            style="height: 100px; width: 200; padding-right: 20px;">
+          <h6>Sides</h6>
+        </div>
+        <div class="carousel-cell-image"><img src="assests/row-1-9-beverage.jfif" alt=""
+            style="height: 100px; width: 200; padding-right: 20px;">
+          <h6>Beverages</h6>
+        </div>
+        <div class="carousel-cell-image"><img src="assests/row-1-10-dessert.jfif" alt=""
+            style="height: 100px; width: 200; padding-right: 20px;">
+          <h6>Dessert</h6>
+        </div>
+        <div class="carousel-cell-image"><img src="assests/row-1-11-wings.jfif" alt=""
+            style="height: 100px; width: 200; padding-right: 20px;">
+          <h6>Chiken <br> Wings</h6>
+        </div>
+        <div class="carousel-cell-image"><img src="assests/row-1-12-bk.jfif" alt=""
+            style="height: 100px; width: 200; padding-right: 20px;">
+          <h6>Bk Cafe</h6>
+        </div>
+        <div class="carousel-cell-image"><img src="assests/row-1-13-coffee.jfif" alt=""
+            style="height: 100px; width: 200; padding-right: 20px;">
+          <h6>Coffee and <br> Chill <br> Combos(<br> Save upto <br> 20%)</h6>
+        </div>
+      </div>
+    </div>
+  </div> <br><br>
+
+
+
+
+
+  <div class="container">
+    <div class="row">
+      <h2><b> KING DEALS OF THE DAY </b></h2>
+
+      <div class="same">
+        <div class="carousel" data-flickity='{ "wrapAround": true }'>
+          <div class="carousel-cell-image">
+            <img src="assests/row-2-1 bkcafe.jfif" alt="" style="height: 200px; width: 350px;">
+          </div>
+
+          <div class="carousel-cell-image">
+            <img src="assests/row-2-2-chicken.jfif" alt="" style="height: 200px; width: 350px;">
+          </div>
+
+          <div class="carousel-cell-image">
+            <img src="assests/row -2-3-peri fries.jfif" alt="" style="height: 200px; width: 350px;">
+          </div>
+
+          <div class="carousel-cell-image">
+            <img src="assests/row -2- 4 veg vohper.jfif" alt="" style="height: 200px; width: 350px;">
+          </div>
+
+          <div class="carousel-cell-image">
+            <img src="assests/row-2-5-bonless.jfif" alt="" style="height: 200px; width: 350px;">
+          </div>
+
+          <div class="carousel-cell-image">
+            <img src="assests/row-2-6-fiery.jfif" alt="" style="height: 200px; width: 350px;">
+          </div>
+
+          <div class="carousel-cell-image">
+            <img src="assests/row-2-7-.jfif" alt="" style="height: 200px; width: 350px;">
+          </div>
+         </div>
+        </div> 
+      </div>
+   </div>
+
+
+
+<div class="container" >
+  <div class="row" style="margin-top: 300px;">
+        <h2> <b> FAVOURITES </b></h2><br><br>
+
+        <div class="twinkle">
+          <div class="carousel" data-flickity='{ "wrapAround": true }'>
+            <div class="carousel-cell-image" >
+              <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="assests/row-3-1 burger.jfif" class="img-fluid rounded-start" alt="..." style="height: 198px;">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">CRISPY VEG DOUBLE PATTY +..</h5>
+                      <p class="card-text">Crispy Veg Double Patty+ Crispy Veg Double Patty </p>
+
+                      <h5> Rs119/- 
+                        <button class="btn btn"
+            style="background-color:white; color:#e70; border-radius: 25px; border-color:#e70;  font-size: 15px; margin-left: 50px;"><b>
+              ADD + </b></button>
+                      </h5>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+            <div class="carousel-cell-image">
+              <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="assests/row-3-2.jfif" class="img-fluid rounded-start" alt="..." style="height: 198px;">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">LITE WHOPPER JR <br> VEG + LITE </h5>
+                      <p class="card-text">Lite WHopper jr Veg + Lite Whopper jr Veg</p>
+
+                      <h5> Rs209/- 
+                        <button class="btn btn" style="background-color:white; color:#e70; border-radius: 25px; border-color:#e70;  font-size: 15px; margin-left: 50px;"><b> ADD + </b></button>
+                      </h5>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="carousel-cell-image">
+              <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="assests/row-3-3.jfif" class="img-fluid rounded-start" alt="..." style="height: 198px;">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">CRISPY CHICKEN br DOUBLE PATTY +... </h5>
+                      <p class="card-text">Crispy Chicken Double Patty + Crispy Chiken..</p>
+
+                      <h5> Rs189/- 
+                        <button class="btn btn" style="background-color:white; color:#e70; border-radius: 25px; border-color:#e70;  font-size: 15px; margin-left: 50px;"><b> ADD + </b></button>
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="carousel-cell-image">
+              <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="assests/row-3-4.jfif" class="img-fluid rounded-start" alt="..." style="height: 198px;">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">CRISPY VEG <br> DOUBLE PATTY </h5>
+                      <p class="card-text">Double up our best selling crispy veg burger </p>
+                      <h5> Rs300/- 
+                        <button class="btn btn" style="background-color:white; color:#e70; border-radius: 25px; border-color:#e70;  font-size: 15px; margin-left: 50px;"><b> ADD + </b></button>
+                      </h5>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="carousel-cell-image">
+              <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="assests/row-3-5.jfif" class="img-fluid rounded-start" alt="..." style="height: 198px;" >
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">BK CLASSIC VEG <br> WITH CHEESE </h5>
+                      <p class="card-text">Our tribute to classic american taste. BK veg </p>
+                      <h5> Rs159/- 
+                        <button class="btn btn" style="background-color:white; color:#e70; border-radius: 25px; border-color:#e70;  font-size: 15px; margin-left: 50px;"><b> ADD + </b></button>
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="carousel-cell-image">
+              <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="assests/row-3-5.jfif" class="img-fluid rounded-start" alt="..." style="height: 198px;">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">FRIES (KING)  </h5>
+                      <p class="card-text">The perfect crispy partner.</p> <br><br>
+                      <h5> Rs230/- 
+                        <button class="btn btn" style="background-color:white; color:#e70; border-radius: 25px; border-color:#e70;  font-size: 15px; margin-left: 50px;"><b> ADD + </b></button>
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div> <br><br>
+
+          <button
+            style="background-color: #e70; color: #fff; border-radius: 25px; border:#e70; width: 30%; padding: 10px; font-family: flame-regular; font-size: 20px; margin-left: 450px;"><b>
+              EXPLORE FULL MENU </b></button> <br><br>
+
+              <div class="row">
+          <img src="assests/home-bk-wall. brown- wall.jpg" alt="home-bk-wall" style="width: 100%;">
+        </div>
+        </div>
+      </div>
+</div><br>
+
+
+
+
+
+
+        <!-- footer  -->
+        <div class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <h6 style="margin-right: 170px;">BK INFO</h6>
+                <a href="#" style="text-decoration: none;">
+                 <pre>
+
+About BK
+Fresh Taste
+Investor relations
+                 </pre>
+                </a>
+                 </div>
+     
+                 <div class="col">
+                   <h6 style="margin-right: 163px;">CONTACT</h6>
+                   <a href="#">
+                     <pre>
+
+Help & support
+Write tp us:
+carrers
+customer care
+Supply Chain Quiries
+investor relations
+Corporate Communication
+Franchising
+                     </pre>
+                   </a>
+                 </div>
+                 <div class="col">
+                   <h6 style="margin-right: 170px;">BK CARES</h6>
+                   <a href="#">
+                     <pre>
+
+Nutrition Information
+Creating Brighter Futures
+Trust & Taste
+COVID 19 Safety                 
+                     </pre>
+                   </a>
+                 </div>
+                 <div class="col">
+                   <h6 style="margin-right: 183px;">LEGAL</h6>
+                   <a href="#">
+                     <pre>
+
+Terms & Conditions 
+Privacy Policy 
+                     </pre>
+                   </a>
+                 </div>
+                 <div class="col">
+                   <h6 style="margin-right: 50px;">DOWNLOAD OUR APP</h6>
+                   <br>
+
+
+                   <img src="assests/download aap store 1.png" alt="" style="border: none; width: 110px; margin-left: 10px;">
+
+                   <img src="assests/download google play 2.png" alt="" style="border: none; width: 110px;">
+                 </div>
+
+                 <br>
+     
+     <hr style="border: 1px solid grey;">
+     
+     <div class="row">
+       <div class="col-3">
+         <img src="assests/BK_LOGO_footer burger.png" alt="logo" width="60px" height="60px" style="background-color: #323231;border: none;" >
+     
+       </div>
+       <div class="col-4">
+         <p style="color: #fff; font-size: 10px; font-family: Flame-Regular; margin-left: 80px; "  ><b> TM & 2022 BURGER KING CORPORATION. ALL RIGHTS RESERVED. </b></p>
+       </div>
+       <div class="col-5">
+        <i class="fa-brands fa-square-youtube"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-square-twitter"></i>
+        <i class="fa-brands fa-square-facebook"></i>
+
+       </div>
+     </div>
+     
+
+              
+            </div>
+            
+          </div>
+
+        </div>
+       
+
+
+
+
+        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</body>
+
+</html>
